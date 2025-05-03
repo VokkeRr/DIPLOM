@@ -64,7 +64,7 @@ export default function ServicesScreen() {
       onPress={() => router.push(`/service/${item.id}`)}
     >
       <Image
-        source={{ uri: item.imageUrl || "https://images.unsplash.com/photo-1584982751601-97dcc096659c?q=80&w=2072&auto=format&fit=crop" }} // Без инета фотка не грузит и пусто в эпоинтментах 
+        source={{ uri: item.imageUrl || "https://images.unsplash.com/photo-1584982751601-97dcc096659c?q=80&w=2072&auto=format&fit=crop" }}
         style={styles.serviceImage}
       />
       <View style={styles.serviceInfo}>

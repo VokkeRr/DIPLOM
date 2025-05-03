@@ -76,7 +76,9 @@ export default function ServiceDetailScreen() {
           <View style={styles.infoRow}>
             <View style={styles.infoItem}>
               <DollarSign size={16} color={isDark ? "#A5D8FF" : "#0080FF"} />
-              <Text style={styles.infoText}>${service.price.toFixed(2)}</Text>
+              <Text style={styles.infoText}>
+                ${typeof service.price === 'number' ? service.price.toFixed(2) : Number(service.price).toFixed(2)}
+              </Text>
             </View>
             <View style={styles.infoItem}>
               <Clock size={16} color={isDark ? "#A5D8FF" : "#0080FF"} />

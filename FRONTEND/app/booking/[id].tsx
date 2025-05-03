@@ -147,11 +147,12 @@ export default function BookingScreen() {
         }),
       });
 
-      const data = await response.json();
-
       if (!response.ok) {
+        const data = await response.json();
         throw new Error(data.message || "Failed to book appointment");
       }
+
+      const data = await response.json();
 
       Alert.alert(
         "Appointment Booked",
@@ -261,7 +262,9 @@ export default function BookingScreen() {
             </View>
             <View style={styles.summaryRow}>
               <Text style={styles.summaryLabel}>Price:</Text>
-              <Text style={styles.summaryValue}>${service.price.toFixed(2)}</Text>
+              <Text style={styles.summaryValue}>
+                ${typeof service.price === 'number' ? service.price.toFixed(2) : Number(service.price).toFixed(2)}
+              </Text>
             </View>
             <View style={styles.summaryRow}>
               <Text style={styles.summaryLabel}>Duration:</Text>

@@ -99,7 +99,9 @@ export default function AdminScreen() {
         <Text style={styles.serviceDescription} numberOfLines={2}>
           {item.description}
         </Text>
-        <Text style={styles.servicePrice}>${item.price.toFixed(2)}</Text>
+        <Text style={styles.servicePrice}>
+          ${typeof item.price === 'number' ? item.price.toFixed(2) : Number(item.price).toFixed(2)}
+        </Text>
       </View>
       <View style={styles.actionButtons}>
         <TouchableOpacity
